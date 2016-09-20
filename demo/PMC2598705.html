@@ -4,6 +4,51 @@
         <!-- AppResources meta begin -->
         <script type="text/javascript">var ncbi_startTime = new Date();</script>
         <!-- AppResources meta end -->
+
+        <!-- mark.js testing -->
+        <style>
+          mark {
+          background: orange;
+          color: black;
+          }
+
+          .annotator-hl {
+          background: orange;
+          color: black;
+          }
+        </style>
+
+        <script src="./js/mark.min.js"></script>
+        <script src="./js/jquery.js"></script>
+
+        <script>
+
+          $( document ).ready(function() {
+
+          var context = document.querySelector(".content");          
+          var instance = new Mark(context);
+          var options = {
+          "element": "span",
+          "id": "AbC-claim-0",
+          "className": "annotator-hl",
+          "datanum": 0,
+          "fieldname": "claim",
+          "name": "annotator-mp",
+          "separateWordSearch": false,
+          "acrossElements": true,
+          "accuracy": "exactly"
+          };
+
+          try {
+          instance.mark("simvastatin", options);
+          } catch (err) {
+          console.log(err);
+          }
+          
+          });
+
+        </script>
+
         
         <!-- TemplateResources meta begin -->
         <meta name="paf_template" content="">
